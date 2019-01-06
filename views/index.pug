@@ -1,0 +1,26 @@
+extends layout
+
+
+
+
+block content
+  h1= "NSFW WebServer"
+  div(class="flex-container")
+    each key in listVid
+      -
+        const urlVid=key
+        const thumburl="./thumbs/thumb_"+key
+
+      div(class="entry")
+        video(width=width,controls="controls")
+          source(src=urlVid,type="video/mp4")
+            
+    each key in list
+      -
+        const url="./"+key
+        const thumburl="./thumbs/thumb_"+key
+
+      div(class="entry")
+        a(href=url)
+          img(src=thumburl)
+
